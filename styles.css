@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat:700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lora', sans-serif;
+  background: #f6fbfd;
+  color: #224055;
+}
+
+header {
+  background: #2196b4;
+  color: #fff;
+  text-align: center;
+  padding: 1.4em 1em 1em 1em;
+}
+
+header h1,
+.hero h2 {
+  font-family: 'Caveat', cursive;
+}
+
+.logo {
+  height: 58px;
+  vertical-align: middle;
+  border-radius: 9px;
+  margin-bottom: .6em;
+}
+header h1 {
+  margin: 0.14em 0 .3em 0;
+  font-size: 2.1em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+nav {
+  margin: 1em 0 0 0;
+}
+nav a {
+  color: #fff;
+  background: #27b3c3;
+  padding: 0.65em 1.2em;
+  border-radius: 26px;
+  margin: 0 0.12em;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  display: inline-block;
+  font-size: 1.05em;
+}
+nav a:hover, nav a.active { background: #17a2b8; }
+
+.hero {
+  background: #eaf3fb;
+  padding: 3.3em 1.2em 2em 1.2em;
+  text-align: center;
+  border-radius: 0 0 22px 22px;
+  margin-bottom: 2em;
+  position: relative;
+}
+.hero-bg {
+  position: absolute;
+  top:0; left:0; width:100%; height:100%; object-fit:cover;
+  opacity: 0.12;
+  border-radius: 0 0 22px 22px;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 670px;
+  margin: 0 auto;
+}
+.hero h2 {
+  font-size: 2.2em;
+  color: #157289;
+  margin-bottom: 0.7em;
+}
+.hero p {
+  font-size: 1.17em;
+  color: #337396;
+  margin-bottom: 1.3em;
+}
+.hero button {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.11em;
+  padding: 0.85em 2.1em;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 18px #2196b440;
+  transition: background 0.15s;
+}
+.hero button:hover { background: #116d86; }
+.about-text {
+  font-size: 1.15em;
+  line-height: 1.65;
+  color: #224055;
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  transition: height 0.3s;
+}
+#about-full.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .35s, opacity .3s;
+  margin: 0;
+  padding: 0;
+}
+#about-full.expanded {
+  max-height: 900px;
+  opacity: 1;
+  transition: max-height .5s, opacity .45s;
+}
+.about-readmore-btn {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  margin-top: 1.1em;
+  padding: 0.62em 1.45em;
+  font-size: 1.01em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.2px;
+}
+.about-readmore-btn:hover {
+  background: #2196b4;
+}
+#ellipsis {
+  display: inline;
+}
+
+.notice-events-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.1em;
+  max-width: 1100px;
+  margin: 0 auto 2.2em auto;
+  padding: 1.2em 1.2em;
+}
+.notice-board-wrapper, .upcoming-events {
+  flex: 1 1 45%;
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2px 13px #019db422;
+  padding: 1.5em 1.25em;
+  position: relative;
+  height: 260px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.notice-board-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .7em;
+}
+.notice-board-title h2, .upcoming-events h2 {
+  font-size: 1.25em;
+  color: #127a8c;
+  display: inline-block;
+  margin-bottom: 0.2em;
+}
+.know-more-btn {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 0.5em 1em;
+  font-size: 0.98em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.know-more-btn:hover { background: #2196b4; }
+.notice-scroll-container {
+  overflow: hidden;
+  position: relative;
+  height: 170px;
+  margin-bottom: 1em;
+}
+#notice-marquee {
+  list-style: disc inside none;
+  margin: 0;
+  padding-left: 1.1em;
+  position: absolute;
+  width: 100%;
+  animation: vertical-scroll 13s linear infinite;
+}
+#notice-marquee li {
+  font-size: 1.06em;
+  color: #127a8c;
+  margin-bottom: .7em;
+}
+@keyframes vertical-scroll {
+  0% { top:100%; }
+  10% { top:0; }
+  90% { top:-100%; }
+  100% { top:100%; }
+}
+.upcoming-events ul {
+  padding-left: 1.3em;
+  font-size: 1.05em;
+  color: #2573b4;
+  margin: 0;
+}
+.upcoming-events ul li {
+  margin-bottom: 0.7em;
+}
+
+.why-sets-apart {
+  max-width: 1100px;
+  margin: 2.7em auto 2.5em auto;
+  display: flex;
+  justify-content: center;
+  gap: 2.3em;
+}
+.why-sets-apart > div {
+  background: #e3fdff;
+  color: #127379;
+  border-radius: 13px;
+  padding: 1.6em 1.3em 1.6em 1.3em;
+  flex: 1 1 48%;
+  box-shadow: 0 0 16px #17a2b811;
+  min-width: 240px;
+}
+.why-sets-apart h2 {
+  margin-bottom: 1em;
+  font-size: 1.32em;
+  color: #157289;
+  border-bottom: 1.5px solid #17a2b8;
+  padding-bottom: .3em;
+}
+.why-sets-apart ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.3em;
+  font-size: 1.09em;
+}
+.why-sets-apart ul li {
+  margin-bottom: .7em;
+}
+
+.gallery-full {
+  background: transparent;
+  max-width: 1150px;
+  margin: 1.8em auto 2em auto;
+  padding: 0;
+  border-radius: 17px;
+}
+.gallery-full h2 {
+  margin: 0 0 1em 0.5em;
+  color: #127687;
+  font-weight: 600;
+  font-size: 1.32em;
+}
+.gallery-single {
+  width: 94vw;
+  height: 53vw;
+  max-height: 440px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ebf7fa;
+  border-radius: 14px;
+  box-shadow: 0 1px 10px #19afba16;
+  position: relative;
+}
+.gallery-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: opacity .23s;
+  filter: none;
+}
+.gallery-controls {
+  text-align: center;
+  margin-top: 0.5em;
+}
+.gallery-controls button {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 1.2em;
+  margin: 0 0.4em;
+  cursor: pointer;
+  transition: background 0.17s;
+}
+.gallery-controls button:hover { background: #2196b4; color: #fff; }
+
+/* Responsive styles */
+@media (max-width: 1050px) {
+  .about-extra,
+  .why-sets-apart,
+  .notice-events-container {
+    flex-direction: column;
+    gap: 1.8em;
+    max-width: 96vw;
+    align-items: stretch;
+  }
+  .why-sets-apart > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 749px) {
+  header, .hero, section, .gallery-full,
+  .about-extra, .why-sets-apart, .notice-events-container {
+    padding: 1em;
+  }
+  .logo { height: 44px; }
+  .gallery-single { min-width: 98vw; height: 41vw; min-height: 130px; }
+}
+
+footer {
+  background: #2196b4;
+  color: #fff;
+  text-align: center;
+  padding: 1.3em 0 1em 0;
+  border-radius: 0 0 16px 16px;
+  font-size: 1.1em;
+  margin-top: 2em;
+}
+.footer-links {
+  margin-top: .6em;
+}
+.footer-links a {
+  color: #f9f9f9;
+  text-decoration: underline;
+  font-size: .99em;
+  margin: 0 .6em;
+  opacity: 0.85;
+}
+.footer-links a:hover { color: #006b7e; }
+/* Hide elements by default */
+.hidden { display: none; }
+
+
+.admissions-section.modern-admission {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px #2196b440;
+  padding: 2.4em 1.8em;
+  max-width: 420px;
+  margin: 2.5em auto 3em auto;
+}
+
+.admissions-section h2 {
+  color: #157289;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+.admission-note {
+  color: #38848c;
+  text-align: center;
+  margin-bottom: 1.4em;
+  font-size: 1.07em;
+}
+
+.admissions-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.form-group input {
+  width: 100%;
+  font-size: 1.07em;
+  border: 1.5px solid #17a2b8;
+  border-radius: 10px;
+  padding: 1.2em 1.1em 1.2em 2.2em;
+  background: #f6fbfd;
+  color: #25576b;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.form-group input:focus {
+  border-color: #2196b4;
+  box-shadow: 0 3px 12px #70cad823;
+}
+
+.form-group label {
+  position: absolute;
+  top: 1.2em;
+  left: 1.15em;
+  color: #17a2b8;
+  font-size: 1.06em;
+  background: none;
+  pointer-events: none;
+  transition: top .16s, font-size .14s, color .18s;
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  opacity: .75;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -1em;
+  left: 0.85em;
+  background: #fff;
+  padding: 0 .4em;
+  font-size: .91em;
+  color: #157289;
+  opacity: 1;
+}
+
+.form-btn-animate {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 1em 0;
+  font-size: 1.13em;
+  font-weight: 600;
+  margin-top: .5em;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #2196b420;
+  transition: background .23s, box-shadow .23s, transform .14s;
+  letter-spacing: .5px;
+}
+
+.form-btn-animate:hover {
+  background: #127a8c;
+  box-shadow: 0 5px 22px #17a2b833;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.success-message {
+  margin-top: 1.5em;
+  background: #e1f9e8;
+  color: #187956;
+  border-radius: 9px;
+  padding: 1.2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.09em;
+  box-shadow: 0 2px 15px #a0ebc960;
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .admissions-section.modern-admission {
+    padding: 1.2em 0.18em;
+    max-width: 98vw;
+  }
+}
+
+/* Section Borders */
+.section-bordered {
+  border: 2.5px solid #209eb7;
+  border-radius: 20px;
+  box-shadow: 0 2px 24px #2196b414;
+  margin-bottom: 2.2em;
+  background: #fff;
+}
+
+/* Highlights Image Strip */
+/* Highlight Strip: Only one image visible at a time, extra large */
+.highlights-strip {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 320px;
+  margin: 2.2em auto 2em auto;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 2px 22px #2196b43b;
+  background: #f4fafd;
+}
+
+.highlights-strip .images-wrapper {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(.4,.9,.2,1);
+  height: 100%;
+  width: 100%;
+}
+
+.highlights-strip .strip-image {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+}
+
+.highlights-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 6px 40px #2196b430;
+  display: block;
+}
+
+.highlights-strip .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(33, 150, 180, 0.75);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.highlights-strip .nav-btn:hover {
+  background: rgba(33, 150, 180, 1);
+}
+.highlights-strip .nav-btn.prev {
+  left: 24px;
+}
+.highlights-strip .nav-btn.next {
+  right: 24px;
+}
+
+@media (max-width: 810px) {
+  .highlights-strip {
+    height: 190px;
+    border-radius: 14px;
+  }
+  .highlights-strip .nav-btn {
+    width: 32px; height: 32px; font-size: 17px;
+    left: 7px; right: 7px;
+  }
+}
+
+/* Admissions Form Modern + Responsive (fixes box overflow) */
+.admissions-section.modern-admission {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px #2196b440;
+  padding: 2.4em 1.2em;
+  max-width: 420px;
+  width: 95vw;
+  margin: 2.5em auto 3em auto;
+  border: 2.5px solid #209eb7;
+}
+
+.admissions-section h2 {
+  color: #157289;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+.admission-note {
+  color: #38848c;
+  text-align: center;
+  margin-bottom: 1.4em;
+  font-size: 1.07em;
+}
+
+.admissions-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.form-group input {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1.07em;
+  border: 1.5px solid #17a2b8;
+  border-radius: 10px;
+  padding: 1.2em 1.1em 1.2em 2.2em;
+  background: #f6fbfd;
+  color: #25576b;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #2196b4;
+  box-shadow: 0 3px 12px #70cad823;
+}
+
+.form-group label {
+  position: absolute;
+  top: 1.2em;
+  left: 1.15em;
+  color: #17a2b8;
+  font-size: 1.06em;
+  pointer-events: none;
+  transition: top .16s, font-size .14s, color .18s;
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  opacity: .75;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -1.2em;
+  left: 0.85em;
+  background: #fff;
+  padding: 0 .4em;
+  font-size: .91em;
+  color: #157289;
+  opacity: 1;
+}
+
+.form-btn-animate {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 1em 0;
+  font-size: 1.13em;
+  font-weight: 600;
+  margin-top: .5em;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #2196b420;
+  transition: background .23s, box-shadow .23s, transform .14s;
+  letter-spacing: .5px;
+}
+
+.form-btn-animate:hover {
+  background: #127a8c;
+  box-shadow: 0 5px 22px #17a2b833;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.success-message {
+  margin-top: 1.5em;
+  background: #e1f9e8;
+  color: #187956;
+  border-radius: 9px;
+  padding: 1.2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.09em;
+  box-shadow: 0 2px 15px #a0ebc960;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .highlights-strip { gap: 1vw; padding: 0.5em 0.2em; }
+  .strip-image { width: 80px; height: 55px; min-width: 80px; }
+  .admissions-section.modern-admission { padding: 1em 0.5em; max-width: 98vw; }
+}
+
+/* The rest of your previous CSS for sections, borders, gallery, etc. can remain as is */

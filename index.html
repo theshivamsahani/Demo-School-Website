@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shivam Public School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/school-logo.png">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="assets/school-logo.png" alt="School Logo" class="logo">
+    <h1>Shivam Public School</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin.html">Admin Login</a>
+    </nav>
+  </header>
+
+  <!-- Highlights Images Section -->
+  <section class="highlights-strip section-bordered single-view">
+  <button class="nav-btn prev" aria-label="Previous">&#8678;</button>
+  <div class="images-wrapper">
+    <div class="strip-image">
+      <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80" alt="Campus">
+    </div>
+    <div class="strip-image">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1000&q=80" alt="Library">
+    </div>
+    <div class="strip-image">
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1000&q=80" alt="Lab">
+    </div>
+    <div class="strip-image">
+      <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=80" alt="Sports">
+    </div>
+    <!-- Add more as needed -->
+  </div>
+  <button class="nav-btn next" aria-label="Next">&#8680;</button>
+</section>
+
+
+  <section class="hero section-bordered">
+    <img src="assets/hero-bg.jpg" alt="School Banner" class="hero-bg">
+    <div class="hero-content">
+      <h2>Empowering Minds, Enriching Lives</h2>
+      <p>
+        Welcome to Shivam Public School—where tradition meets innovation. Nurturing leaders, visionaries, and responsible citizens in a vibrant, inclusive learning environment.
+      </p>
+      <button onclick="location.href='admissions.html'">Apply Now</button>
+    </div>
+  </section>
+
+  <section class="about-school large-section section-bordered">
+    <h2>About Shivam Public School</h2>
+    <div class="about-text">
+      <p>
+        Shivam Public School, established in 2009, stands as a beacon of holistic education and character building. Our vision is rooted in fostering not only academic brilliance but also values, critical thinking, and leadership in every student.
+      </p>
+      <p id="about-short">
+        Our vibrant campus, cutting-edge labs, digital classrooms, and a strong culture of respect make us a top choice for students and parents. <span id="ellipsis">...</span>
+      </p>
+      <div id="about-full" class="collapsed">
+        <p>
+          We believe in nurturing all facets of a child’s growth: academic, social, emotional, and creative. Our experienced faculty is dedicated to encouraging curiosity, collaboration, and resilience while ensuring every learner receives personalized attention. The school infrastructure boasts a modern library, sprawling sports grounds, dedicated STEM and innovation labs, as well as arts and music studios to create a well-rounded learning environment.
+        </p>
+        <p>
+          Shivam Public School’s achievements stand as a testimony to our commitment: our alumni excel in leading universities, our teams win national competitions in science, technology, debate and sports, and our community outreach programs inspire responsibility and empathy. Parent engagement is at the forefront—families are active partners in every step of the journey.
+        </p>
+        <p>
+          We invite you to join a tradition of excellence. Discover a school where dreams take flight, individuality is celebrated, and the leaders of tomorrow are shaped.
+        </p>
+      </div>
+      <button id="read-more-btn" class="about-readmore-btn" onclick="toggleAbout()">Read More</button>
+    </div>
+  </section>
+
+  <section class="notice-events-container section-bordered">
+    <div class="notice-board-wrapper">
+      <div class="notice-board-title">
+        <h2>Notice Board</h2>
+        <button class="know-more-btn" onclick="window.open('documents/official-notices.pdf')">Latest Notice</button>
+      </div>
+      <div class="notice-scroll-container">
+        <ul id="notice-marquee">
+          <li>Loading notices...</li>
+        </ul>
+      </div>
+    </div>
+    <div class="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <ul id="upcoming-events-list">
+        <li>Loading events...</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="why-sets-apart section-bordered">
+    <div>
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Vast Playground and world-class amenities</li>
+        <li>Digital Library and e-learning resources</li>
+        <li>Modern Computer and Science Labs</li>
+        <li>Award-winning faculty and staff</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What Sets Us Apart</h2>
+      <ul>
+        <li>Value-Based Holistic Education</li>
+        <li>Inclusive and Safe Environment</li>
+        <li>Exceptional Alumni Success</li>
+        <li>Parent & Community Programs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="gallery gallery-full section-bordered">
+    <h2>Image Gallery</h2>
+    <div class="gallery-single" id="gallery-single">
+      <img src="assets/gallery1.jpg" alt="Annual Day">
+    </div>
+    <div class="gallery-controls">
+      <button id="prev-gallery" aria-label="Previous Image">&lt;</button>
+      <button id="next-gallery" aria-label="Next Image">&gt;</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Shivam Public School | Designed by Shivam.
+    <div class="footer-links">
+      <a href="documents/handbook.pdf" target="_blank">Parent Handbook</a>
+      <a href="mailto:info@shivampublicschool.edu.in">Contact Email</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admissions | Shivam Public School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="assets/school-logo.png" alt="School Logo" class="logo">
+    <h1>Shivam Public School</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="media.html">Media</a>
+      <a href="admissions.html" class="active">Admissions</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+  
+  <section class="admissions-section modern-admission section-bordered animated">
+    <h2>Admissions Open 2025-26</h2>
+    <p class="admission-note">Join our vibrant learning community. Admissions for all grades are now open!</p>
+    <form class="admissions-form-modern" id="admissions-form" autocomplete="off">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required placeholder=" ">
+        <label for="name"><span>&#128100;</span> Student Name</label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="grade" name="grade" required placeholder=" ">
+        <label for="grade"><span>&#127891;</span> Grade Applying For</label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="contact" name="contact" required placeholder=" ">
+        <label for="contact"><span>&#128222;</span> Guardian Contact</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder=" ">
+        <label for="email"><span>&#9993;</span> Guardian Email</label>
+      </div>
+      <button type="submit" class="form-btn-animate">Submit Application</button>
+    </form>
+    <div id="admission-success" class="hidden success-message">
+      🎉 Application submitted! Our admissions team will contact you soon.
+    </div>
+  </section>
+<section class="admission-documents section-bordered">
+  <h2>Important: Documents Required for Admission</h2>
+  <p>
+    Please bring the following documents during your visit to our school to ensure a smooth admission process:
+  </p>
+  <ul>
+    <li>Aadhaar Card of student and guardian</li>
+    <li>Birth Certificate of the student</li>
+    <li>Previous School’s Transfer Certificate (if applicable)</li>
+    <li>Latest Report Card/Marksheet</li>
+    <li>Passport size photographs (recent)</li>
+    <li>Any other relevant documents as requested by the administration</li>
+  </ul>
+  <p>
+    <strong>Note:</strong> Submission of these documents is mandatory to confirm your admission at Shivam Public School.
+  </p>
+</section>
+
+  <footer>
+    &copy; 2025 Shivam Public School
+  </footer>
+</body>
+</html>
