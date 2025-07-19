@@ -677,3 +677,37 @@ footer {
 }
 
 /* The rest of your previous CSS for sections, borders, gallery, etc. can remain as is */
+.floating-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200vw;                        /* Extra width for diagonal coverage */
+  height: 3em;                         /* Scales with font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 6vw;                      /* Responsive font size: 6% of viewport width */
+  color: rgba(0, 0, 0, 0.5);
+  background: none;
+  text-align: center;
+  mix-blend-mode: multiply;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Adjust for very small screens (phones) */
+@media (max-width: 640px) {
+  .floating-text {
+    font-size: 8vw;                    /* Slightly larger for small screens */
+  }
+}
+
+/* Adjust for very large screens */
+@media (min-width: 2000px) {
+  .floating-text {
+    font-size: 4vw;                    /* Reduce font size on huge displays */
+  }
+}
